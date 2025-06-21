@@ -61,8 +61,7 @@ void NumberReverser(int n){
 
     }
     // Check for 32-bit integer overflow
-        if (rev < INT_MIN || rev > INT_MAX)
-            return 0;
+        if (n < INT_MIN || n > INT_MAX) {cout << 0;}
 
     cout << "Reversed Num: " << newnum;
 }

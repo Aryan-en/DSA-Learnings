@@ -13,12 +13,28 @@
 using namespace std;
 
 int isPalindrome(int x) {
-    vector<int> nums;
+    int OrgNum = x;
         if(x<0) {
             return false;
         }
     else{
+        long long rev = 0;
+
+        while (x != 0) {
+            int digit = x % 10;
+            rev = rev * 10 + digit;
+            x /= 10;
+        }
+        if (rev < INT_MIN || rev > INT_MAX)
+            {
+                return false;
+            }
+        if (OrgNum == rev)
+        {
+            return true;
+        }
         
+        return 0;
     }
 }
 int main() {
