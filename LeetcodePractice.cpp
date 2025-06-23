@@ -11,33 +11,32 @@
 #include <functional>
 #include <stack>
 using namespace std;
-
-int isPalindrome(int x) {
-    int OrgNum = x;
-        if(x<0) {
-            return false;
-        }
-    else{
-        long long rev = 0;
-
-        while (x != 0) {
-            int digit = x % 10;
-            rev = rev * 10 + digit;
-            x /= 10;
-        }
-        if (rev < INT_MIN || rev > INT_MAX)
-            {
-                return false;
-            }
-        if (OrgNum == rev)
+string newstr;
+int generateTag(string caption) {
+        newstr += '#';
+        for (int i = 0; i < caption.length(); i++)
         {
-            return true;
+            if(caption[i] == ' '){
+                caption[i+1] = toupper(caption[i+1]);
+                newstr += caption[i+1];
+                caption.erase(i+1,1);
+            }
+            else{
+                caption[i] = tolower(caption[i]);
+                newstr += caption[i];  
+            }
         }
+     for (int i = 0; i < newstr.length(); i++)
+     {
+        if(newstr[i] == '\\'){
+            caption.erase(caption[i], 6);
+        }
+     }
         
-        return 0;
-    }
+    cout << '\\'; 
+    return 0;
 }
 int main() {
-isPalindrome(-1);
+generateTag("Bold apple beyond bright future crash mountains glow light gently dance waits shore breeze mind ");
 return 0;
 }
