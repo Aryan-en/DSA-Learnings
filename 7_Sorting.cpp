@@ -57,7 +57,24 @@ void BubbleSort(){
         cout << arr[i] << ", ";
     }
 }
+void InsertionSort(){
+    for (int i = 0; i < 6; i++)
+    {
+        int j = i;
+        while (j>0 && arr[j-1]>arr[j])
+        {
+            temp = arr[j-1];
+            arr[j-1] = arr[j];
+            arr[j] = temp;
+            j--;
+        }
+    }
+    for (int i = 0; i < 6; i++)
+    {
+        cout << arr[i] << ", ";
+    }    
+}
 int main() {
-BubbleSort();
+InsertionSort();
 return 0;
 }
