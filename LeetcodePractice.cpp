@@ -40,18 +40,48 @@ using namespace std;
 vector<int> nums = {1,3,5,6};
 int target = 7;
 void searchInsert() {
-    int ExistingIndex = 0;
+    int ExistingIndex = 0, temp, sortedIndex = 0;
     vector<int> newarr;
     for (int i = 0; i < nums.size(); i++)
     {
         if(target == nums[i]){
             ExistingIndex += i;
-            // return ExistingIndex;
         }
         else{
             newarr.emplace_back(nums[i]);
         }
     }
+    if (newarr.size() != nums.size())
+    {
+        // return ExistingIndex;
+        cout << ExistingIndex;
+    }
+
+    else{
+    newarr.emplace_back(target);
+    for (int i = (newarr.size()-1); i >=0; i--)
+    {
+        for (int j = 0; j <= (i-1); j++)
+        {
+            if (newarr[j] > newarr[j+1]){
+                temp = newarr[j+1];
+                newarr[j+1] = newarr[j];
+                newarr[j] = temp;
+            }
+        }   
+    }
+
+    for (int i = 0; i < newarr.size(); i++)
+    {
+        if(newarr[i] == target){
+            sortedIndex += i;
+            // return sortedIndex
+            cout << sortedIndex;
+        }
+    }
+    
+    }
+    
 }
 
 int main() {
