@@ -15,16 +15,16 @@ using namespace std;
 void merge(vector<int>& arr, int low, 
                      int mid, int high)
 {
-    int n1 = mid - low + 1;
-    int n2 = high - mid;
+    int left = mid - low + 1;
+    int right = high - mid;
 
     // Create temp vectors
-    vector<int> L(n1), R(n2);
+    vector<int> L(left), R(right);
 
     // Copy data to temp vectors L[] and R[]
-    for (int i = 0; i < n1; i++)
+    for (int i = 0; i < left; i++)
         L[i] = arr[low + i];
-    for (int j = 0; j < n2; j++)
+    for (int j = 0; j < right; j++)
         R[j] = arr[mid + 1 + j];
 
     int i = 0, j = 0;
@@ -32,7 +32,7 @@ void merge(vector<int>& arr, int low,
 
     // Merge the temp vectors back 
     // into arr[left..right]
-    while (i < n1 && j < n2) {
+    while (i < left && j < right) {
         if (L[i] <= R[j]) {
             arr[k] = L[i];
             i++;
@@ -46,7 +46,7 @@ void merge(vector<int>& arr, int low,
 
     // Copy the remaining elements of L[], 
     // if there are any
-    while (i < n1) {
+    while (i < left) {
         arr[k] = L[i];
         i++;
         k++;
@@ -54,7 +54,7 @@ void merge(vector<int>& arr, int low,
 
     // Copy the remaining elements of R[], 
     // if there are any
-    while (j < n2) {
+    while (j < right) {
         arr[k] = R[j];
         j++;
         k++;
