@@ -11,20 +11,21 @@
 #include <functional>
 #include <stack>
 using namespace std;
-// int singleNumber(vector<int>& nums) {
-//     map<int,int> hash;
-//     int num = 0;
-//     for (int i = 0; i < nums.size(); i++)
-//     {
-//         hash[nums[i]]++;
-//     }
-//     for(auto it: hash){
-//         if(it.second == 1){
-//             num += it.first;
-//         }
-//     }
-//     return num;   
-// }
+//#17 of Array
+int singleNumber(vector<int>& nums) {
+    map<int,int> hash;
+    int num = 0;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        hash[nums[i]]++;
+    }
+    for(auto it: hash){
+        if(it.second == 1){
+            num += it.first;
+        }
+    }
+    return num;   
+}
 int removeDuplicates(vector<int>& nums) {
  map<int,int> hash;
  vector <int>Unique;
@@ -46,10 +47,14 @@ int partition(vector <int> &arr, int low, int high){
     {
         if(arr[j] <= pivot){
             i++;
-            swap(arr[i], arr[j]);
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
     }
-    swap(arr[i+1], arr[high]);
+    int temp2 = arr[i+1];
+    arr[i+1] = arr[high];
+    arr[high] = temp2;
     return (i+1);
 }
 void Sort(vector<int> &arr, int low, int high){
@@ -66,10 +71,32 @@ void largestElem1(vector <int> &nums){
 }
 void largestElem2(vector <int> &nums){
     int largest = nums[0];
-    
+    for(auto itr : nums){
+        if(itr > largest){
+            largest = itr;
+        }
+    }
+    cout << largest;
+}
+void second_largest_withoutSorting(vector <int> &nums){
+int largest = nums[0];
+int secondL = nums[1];
+for (int i = 0; i < nums.size(); i++)
+{
+    if(nums[i] > largest){
+        largest = nums[i];
+    }
+}
+for (int i = 0; i < nums.size(); i++)
+{
+    if(nums[i] > secondL && nums[i] != largest){
+        secondL = nums[i];
+    }
+}
+cout << secondL;
 }
 int main() {
-vector <int> nums = {1,3,4,7,9,239,32,43,7828,343};
-largestElem2(nums);
+vector <int> nums = {1,3,4,7,9,239,32,43,500,7828,343,7828,7828,7828};
+second_largest_withoutSorting(nums);
 return 0;
 }
