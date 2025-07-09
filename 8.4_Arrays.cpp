@@ -78,17 +78,20 @@ void topKFrequent(vector<int>& nums, int k) {
     {
         hash[nums[i]]++;
     }
-    int n = 0;
-    vector <int> res;
+    int i = 0, largest = nums[i];
     for(auto itr : hash){
-        
+        cout << i << ") " << itr.first << "->" << itr.second <<endl;
+        if(itr.second){
+
+        }
     }
+
 }
 int main() {
 // vector <vector<int>> matrix = {{1,2,3},
 //                                {4,5,6},
 //                                {7,8,9}};
-vector<int> arr = {2,2,3,4};
+vector<int> arr = {1,1,1,2,2,3};
 topKFrequent(arr, 2);
 return 0;
 }

@@ -12,42 +12,25 @@
 #include <stack>
 #include <set>
 using namespace std;
-void threeSum(vector<int>& nums) {
-    int target = 0;
-    set<int> triplets;
-    set <set<int>> triptrip;
-    for (int i = 0; i < nums.size(); i++)
+
+int main() {
+int n;
+cin >> n;
+string arr[n] = {};
+for (int i = 0; i < n; i++)
+{
+    cin >> arr[i];
+}
+for (int j = 0; j < n; j++)
+{
+    if (arr[j].length() > 10)
     {
-        for (int j = i+1; j < nums.size(); j++)
-        {
-            for (int k = j+1; k < nums.size(); k++)
-            {
-                // cout << "triplets = " << nums[i] << " " << nums[j] << " " << nums[k] << endl;
-                if(nums[i]+nums[j]+nums[k] == target){
-                    triplets.insert(nums[i]);
-                    triplets.insert(nums[j]);
-                    triplets.insert(nums[k]);
-                    triptrip.insert(triplets);
-                    triplets.clear();
-                }
-            }
-        }  
+        cout << arr[j][0] << arr[j].length()-2 << arr[j][arr[j].length()-1] << endl;
     }
-for (int i = 0; i < triptrip.size(); i++)
-{   
-    cout << "[";
-    for (int j = 0; j < 3; j++)
-    {
-        cout << triptrip[i][j] << ", ";
+    else{
+        cout << arr[j] << endl;
     }
-    cout << "]";
-    cout << endl;
 }
 
-           
-}
-int main(){
-vector<int> nums = {-1,0,1,2,-1,-4};
-threeSum(nums);
 return 0;
 }
