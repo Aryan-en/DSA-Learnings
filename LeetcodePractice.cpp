@@ -12,25 +12,30 @@
 #include <stack>
 #include <set>
 using namespace std;
-
+void findDisappearedNumbers(vector<int>& nums) {
+    // int n = nums.size();
+    // vector<int> newarr;
+    // map <int, int> hash;
+    // for (int i = 0; i < n; i++)
+    // {
+    //     hash[nums[i]]++;
+    // }
+    // int i = 1;
+    // for(auto it : hash){
+    //     if(i != it.first){
+    //         newarr.emplace_back(i);
+    //     }
+    //             i++;
+    // }
+    // for(auto it : newarr){
+    //     cout << it << " ";
+    // }
+    int arr[2] = {1,2};
+    int arr2[2] = {1,4};
+    int arr3[] = arr - arr2;
+}
 int main() {
-int n;
-cin >> n;
-string arr[n] = {};
-for (int i = 0; i < n; i++)
-{
-    cin >> arr[i];
-}
-for (int j = 0; j < n; j++)
-{
-    if (arr[j].length() > 10)
-    {
-        cout << arr[j][0] << arr[j].length()-2 << arr[j][arr[j].length()-1] << endl;
-    }
-    else{
-        cout << arr[j] << endl;
-    }
-}
-
+vector<int> nums = {1,1};
+findDisappearedNumbers(nums);
 return 0;
 }
