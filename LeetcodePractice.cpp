@@ -12,45 +12,35 @@
 #include <stack>
 #include <set>
 using namespace std;
-// bool checkDivisibility(int n) {
-//     vector <int> digits;
-//     bool ans = false;
-//     int OrgVal = n;
-//     while (n != 0)
-//     {
-//         digits.emplace_back(n%10);
-//         n = n/10;
-//     }
-//     int product = 1, sum = 0;
-//     for(auto itr : digits){
-//         product *= itr;
-//         sum+= itr;  
-//     }
-//     if (product+sum == OrgVal)
-//     {
-//         ans = true;
-//     }
-    
-//     return ans;
-// }
-void isIsomorphic(string s, string t) {
-    map <char, int> hash1;
-    map <char, int> hash2;
-    for (int i = 0; i < s.length(); i++)
-    {
-        hash1[s[i]]++;
+void fizzBuzz(int n) {
+vector <string> arr;
+for (int i = 1; i <= n; i++)
+{
+    arr.emplace_back(to_string(i));
+}
+for(int i = 0; i < arr.size(); i++){
+    if(stoi(arr[i])%3 == 0){
+         if(stoi(arr[i])%5 == 0){
+        arr[i] = "FizzBuzz";
     }
-    for (int i = 0; i < t.length(); i++)
-    {
-        hash2[s[i]]++;
-    }
-    for(auto itr1 : hash1){
-        for(auto itr2 : hash2){
-            
+        else{
+            arr[i] = "Fizz";
         }
     }
+    else if(stoi(arr[i])%5 == 0){
+    if(stoi(arr[i])%3 == 0){
+        arr[i] = "FizzBuzz";
+    }
+    else{
+        arr[i] = "Buzz";
+    }
+    }
+}
+for(auto itr : arr){
+    cout << itr << " ";
+}
 }
 int main() {
-isIsomorphic("egg", "add");
+fizzBuzz(3);
 return 0;
 }
