@@ -12,20 +12,44 @@
 #include <stack>
 #include <set>
 using namespace std;
-struct Node{
-    private:
-    int data;
-    Node* next;
+bool check(int n){
+vector<int> digits;
+int OrgNum = n;
+bool ans = false;
+while (n != 0)
+{
+    int a = n%10;
+    digits.emplace_back(a);
+    n /= 10;
+}
+for (int i = 0; i < digits.size(); i++)
+{
+    if (OrgNum%digits[i] == 0)
+    {
+        digits.erase(digits.begin()+i);
+    }  
+}
+if(digits.size() == 0){
+    ans = true;
+}
+return ans;
+}
+void selfDividingNumbers(int left, int right) {
+vector<int> nums;
+vector<int> ans;
+for (int i = left; i <= right; i++)
+{
+    nums.emplace_back(i);
+}
+for(auto itr : nums){
+    if (check(itr) == true)
+    {
+        ans.emplace_back(itr);
+    }  
+}
 
-    public:
-    Node(int data1, Node* next1){
-        data = data1;
-        next = next1;
-    }
-};
+}
 int main() {
-    vector<int> arr = {2,5,8,7};
-    Node* y = new Node(arr[0], nullptr);
-    cout << y;
+selfDividingNumbers(47, 85);
 return 0;
 }

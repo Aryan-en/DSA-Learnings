@@ -12,35 +12,24 @@
 #include <stack>
 #include <set>
 using namespace std;
-void fizzBuzz(int n) {
-vector <string> arr;
-for (int i = 1; i <= n; i++)
-{
-    arr.emplace_back(to_string(i));
-}
-for(int i = 0; i < arr.size(); i++){
-    if(stoi(arr[i])%3 == 0){
-         if(stoi(arr[i])%5 == 0){
-        arr[i] = "FizzBuzz";
+bool isPowerOfThree(int n) {
+    bool ans = false;
+    if (n <0)
+    {
+        return false;
     }
-        else{
-            arr[i] = "Fizz";
+    for (int i = 0; i < ceil(n/2); i++)
+    {
+        if (pow(3,i))
+        {
+            /* code */
         }
+        
     }
-    else if(stoi(arr[i])%5 == 0){
-    if(stoi(arr[i])%3 == 0){
-        arr[i] = "FizzBuzz";
-    }
-    else{
-        arr[i] = "Buzz";
-    }
-    }
-}
-for(auto itr : arr){
-    cout << itr << " ";
-}
+    return ans;
 }
 int main() {
-fizzBuzz(3);
+// isPowerOfThree(0);
+cout << pow(3,1);
 return 0;
 }
