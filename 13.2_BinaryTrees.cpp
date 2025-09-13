@@ -14,6 +14,6 @@
 using namespace std;
 
 int main() {
-    cout << "Running";
+//Checkout all the problems solved
 return 0;
 }

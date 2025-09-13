@@ -12,24 +12,27 @@
 #include <stack>
 #include <set>
 using namespace std;
-bool isPowerOfThree(int n) {
-    bool ans = false;
-    if (n <0)
+string seq = "3322251";
+void countAndSay(int n) {
+    // if(n == 1){
+    //     return seq;
+    // }
+    // map<int, int> freq;
+    // for (int i = 0; i < seq.length(); i++)
+    // {
+    //     freq[(seq[i])-48]++;
+    // }
+    for (int i = 0; i < seq.length(); i++)
     {
-        return false;
-    }
-    for (int i = 0; i < ceil(n/2); i++)
-    {
-        if (pow(3,i))
+        string temp = seq[i];
+        for (int j = i; j < seq.length(); j++)
         {
-            /* code */
+            
         }
-        
     }
-    return ans;
+    
 }
 int main() {
-// isPowerOfThree(0);
-cout << pow(3,1);
+countAndSay(4);
 return 0;
 }
