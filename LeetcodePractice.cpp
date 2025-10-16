@@ -12,27 +12,29 @@
 #include <stack>
 #include <set>
 using namespace std;
-string seq = "3322251";
-void countAndSay(int n) {
-    // if(n == 1){
-    //     return seq;
-    // }
-    // map<int, int> freq;
-    // for (int i = 0; i < seq.length(); i++)
-    // {
-    //     freq[(seq[i])-48]++;
-    // }
-    for (int i = 0; i < seq.length(); i++)
-    {
-        string temp = seq[i];
-        for (int j = i; j < seq.length(); j++)
-        {
-            
-        }
+bool buddyStrings(string s, string goal) {
+    bool ans = false;
+    string Org = s;
+    if(s.length() != goal.length()){
+        return false;
     }
-    
+    string tempstr;
+    for (int i = 0; i < s.length(); i++)
+    {
+        
+        for (int j = i; j < s.length(); j++)
+        {
+            char tempcr = s[i];
+            s[i] = s[j];
+            s[j] = tempcr;
+        }
+        cout << s << endl;
+        
+    }
+    return ans;
 }
 int main() {
-countAndSay(4);
+string s = "abcd", goal = "badc";
+cout << buddyStrings(s, goal);
 return 0;
 }
