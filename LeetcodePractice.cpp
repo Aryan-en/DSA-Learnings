@@ -12,26 +12,17 @@
 #include <stack>
 #include <set>
 using namespace std;
-void uniqueOccurrences(vector<int>& arr) {
-    map <int, int> countMap;
-    map <int, int> countMap2;
-    bool ans = true;
-    for (int num : arr) {
-        countMap[num]++;
-    }
-    for(auto itr : countMap){
-        countMap2[itr.second]++;
-    }
-    for(auto itr : countMap2){
-        if(itr.second > 1){
-            ans = false;
-            break;
-        }
-    }
-    // return ans;
+int hIndex(vector<int>& citations) {
+    sort(citations.begin(), citations.end());
+    int n = citations.size();
+    int h = n;
+    
+    cout << endl;
+    return h;
 }
-int main() {
-    vector<int> arr = {1, 2, 2, 1, 1, 3};
-    uniqueOccurrences(arr);
-return 0;
+int main()
+{
+    vector<int> citations = {3, 0, 6, 1, 5};
+    cout << hIndex(citations) << endl;
+    return 0;
 }
