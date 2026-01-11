@@ -12,9 +12,7 @@
 #include <stack>
 #include <set>
 using namespace std;
-void sortByReflection(vector<int>& nums) {
- 
-}
+
 int main() {
     
 return 0;
