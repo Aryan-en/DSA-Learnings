@@ -71,9 +71,6 @@ void rotateRight(ListNode* head, int k) {
         ans.emplace_back(samplesspace[i]);
     }
     reverse(samplesspace.begin(), samplesspace.end());
-    for(auto itr : ans){
-        samplesspace.emplace_back(itr);
-    }  
 }
 int main() {
 vector<int> nums = {1,2,3,4,5};
