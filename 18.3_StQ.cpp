@@ -44,10 +44,20 @@ int largestRectangleArea(vector<int>& heights) {
     return max(horzmax, maxVertArea);
 }
 int maximalRectangle(vector<vector<char>>& matrix) {
+    int maxArea = 0;
+    for (int i = 0; i < matrix.size(); i++)
+    {
         
+    }
+    
 }
 int main() {
-    vector <int> heights = {0,9};
-    cout << largestRectangleArea(heights) << endl;
+vector<vector<char>> matrix = {
+    {'1', '0', '1', '0', '0'},
+    {'1', '0', '1', '1', '1'},
+    {'1', '1', '1', '1', '1'},
+    {'1', '0', '0', '1', '0'}
+};
+cout << "largest rectangle area: " << largestRectangleArea({2,1,5,6,2,3}) << endl;
 return 0;
 }
